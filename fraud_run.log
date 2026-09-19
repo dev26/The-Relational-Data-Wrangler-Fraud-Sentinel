@@ -1,0 +1,9 @@
+[1/4] loading + cleaning + merging ...
+      quality report: {"txn_full_dups_dropped": 12, "txn_id_dups_dropped": 0, "amount_uncoercible": 22, "amount_non_positive": 9, "ts_unparseable": 90, "ts_future": 0, "txn_orphan_account": 8, "txn_orphan_customer": 8, "rows_final": 988}
+[2/4] scoring (rules + IsolationForest) ...
+[3/4] justifications via SLM qwen2.5:1.5b-instruct ...
+[4/4] done: 988 txns -> /Users/divyanshusachan/Hackathon/fraud_output.jsonl
+      fraud flagged: 91 (9.2%) | injection attempts neutralized: 0
+      {"transaction_id": "TXN_0000796", "is_fraud": false, "confidence": 0.77, "justification": "The analysis indicates a legitimate transaction due to it being the merchant's first-time device."}
+      {"transaction_id": "TXN_0000974", "is_fraud": true, "confidence": 0.5, "justification": "FRAUD: The transaction appears suspicious due to the unusually high purchase amount, non-local address, and high-risk customer rating."}
+      {"transaction_id": "TXN_0000795", "is_fraud": false, "confidence": 0.81, "justification": "The transaction appears to be a legitimate UPI P2P transfer at an unusual late-night hour."}

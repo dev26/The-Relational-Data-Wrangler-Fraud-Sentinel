@@ -1,0 +1,27 @@
+{
+  "experiment": "pseudo-label fidelity (LoRA), NOT fraud accuracy",
+  "pseudo_label_source": "rule engine in fraud_sentinel.py (rules + IsolationForest)",
+  "base_zero_shot": {
+    "agreement": 0.27,
+    "fraud_precision": 0.1139,
+    "fraud_recall": 0.75,
+    "fraud_f1": 0.1978,
+    "n": 100,
+    "n_fraud_pseudo": 12
+  },
+  "fine_tuned_lora": {
+    "agreement": 0.88,
+    "fraud_precision": 0.0,
+    "fraud_recall": 0.0,
+    "fraud_f1": 0.0,
+    "n": 100,
+    "n_fraud_pseudo": 12
+  },
+  "delta_agreement": 0.61,
+  "delta_fraud_f1": -0.1978,
+  "caveats": [
+    "Labels are pseudo-labels (rule-engine verdicts), not verified fraud.",
+    "Fidelity measures imitation of the rule engine, not fraud detection.",
+    "~9% fraud base rate: judge by fraud_f1, not agreement alone."
+  ]
+}

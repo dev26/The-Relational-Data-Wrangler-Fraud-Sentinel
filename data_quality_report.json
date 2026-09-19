@@ -1,0 +1,50 @@
+{
+  "record_counts": {
+    "customers_raw": 124,
+    "customers_dedup": 124,
+    "accounts_raw": 178,
+    "accounts_dedup": 178,
+    "transactions_raw": 1000,
+    "transactions_unique_ids": 988,
+    "transactions_final": 988
+  },
+  "duplicates_removed": {
+    "txn_full_duplicate_rows": 12,
+    "txn_duplicate_ids_after": 0
+  },
+  "invalid_or_corrupt": {
+    "amount_non_numeric": 22,
+    "amount_non_positive": 9,
+    "timestamp_unparseable": 90,
+    "timestamp_in_future": 0
+  },
+  "orphaned_relationships": {
+    "txn_account_id_not_in_accounts": 8,
+    "txn_customer_id_not_in_customers": 8,
+    "note": "account.customer_id is treated as source of truth for merges"
+  },
+  "missing_values_by_field": {
+    "customer_id": 8,
+    "transaction_timestamp": 7,
+    "amount": 5,
+    "transaction_type": 75,
+    "channel": 73,
+    "status": 46,
+    "merchant_category": 83,
+    "auth_method": 144,
+    "device_type": 99,
+    "ip_address": 585,
+    "amount_to_account_avg_ratio": 156,
+    "time_since_prev_txn_mins": 156
+  },
+  "prompt_injection": {
+    "merchant_strings_flagged": 0,
+    "note": "untrusted text is sanitized before reaching the SLM; it never affects the verdict"
+  },
+  "flagged_transactions": {
+    "is_fraud_true": 91,
+    "is_fraud_false": 897,
+    "fraud_rate": 0.0921,
+    "note": "risk-based verdict (rules + IsolationForest); NO ground-truth labels exist"
+  }
+}
